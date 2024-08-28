@@ -1,0 +1,9 @@
+<h2>ディテイル</h2>
+
+<a href="{% url 'tasks' %}">戻る</a>
+
+<form action="" method="post">
+    {% csrf_token %}
+    {{form.as_p}}
+    <input type="submit" value="{% if 'edit-task' in request.path %}更新{% else %}追加{% endif %}">
+</form>
